@@ -9,3 +9,5 @@ Embed on the site with an iframe pointing at the Pages URL. Add `?next=<url>` to
 Explore button send the visitor to that address (for example a Wix anchor on the same page).
 
 Copyright CoralCrest Consulting Limited. All rights reserved.
+
+- `services.html` - full rebuilt Services page (hero, four service lines, REEF Method, who it's for, contact)

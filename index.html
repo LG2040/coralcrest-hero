@@ -11,8 +11,8 @@
   --bg-glow: #15222D;
   --fg: #F3EFE8;
   --fg-muted: #9AA7B1;
-  --coral: #C9553E;
-  --coral-soft: #E07A62;
+  --coral: #F0665A;
+  --coral-soft: #F0665A;
   --rule: rgba(243,239,232,0.14);
   --display: Georgia, "Times New Roman", serif;
   --ui: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -38,7 +38,7 @@ body {
   padding-block: 0 calc(28px + env(safe-area-inset-bottom, 0px));
   box-sizing: border-box;
   background:
-    radial-gradient(ellipse 60% 45% at 50% 42%, rgba(201,85,62,0.16), transparent 70%),
+    radial-gradient(ellipse 60% 45% at 50% 42%, rgba(240,102,90,0.16), transparent 70%),
     radial-gradient(ellipse 90% 70% at 50% 45%, var(--bg-glow), var(--bg) 75%);
   overflow: hidden;
 }
@@ -152,11 +152,11 @@ model-viewer.ready ~ .hint { opacity: 0.8; }
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  background: rgba(201,85,62,0.08);
+  background: rgba(240,102,90,0.08);
   transition: background .25s ease, transform .25s ease;
 }
-.enter a:hover, .enter a:focus-visible { background: rgba(201,85,62,0.22); transform: translateY(-1px); outline: none; }
-.enter a:focus-visible { box-shadow: 0 0 0 3px rgba(224,122,98,0.45); }
+.enter a:hover, .enter a:focus-visible { background: rgba(240,102,90,0.22); transform: translateY(-1px); outline: none; }
+.enter a:focus-visible { box-shadow: 0 0 0 3px rgba(240,102,90,0.45); }
 .enter svg { width: 14px; height: 14px; animation: nudge 2.2s ease-in-out infinite; }
 @keyframes nudge { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
 

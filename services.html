@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Services | CoralCrest Consulting</title>
+<meta name="description" content="Treasury, finance transformation, BMA regulatory reporting and TMS implementation advisory for specialty insurers and reinsurers. Delivered by the REEF Method from Bermuda.">
+<style>
+/* Layout: dark stage with the 3D mark on top, then alternating cream and slate bands; one column of long-form sections, content capped at 1040px, services as a two-column grid that stacks on phones. */
+:root {
+  --ink: #1F2A33;
+  --ink-soft: #5A6670;
+  --cream: #F6F1E8;
+  --cream-deep: #EDE5D7;
+  --slate: #0B141C;
+  --slate-glow: #15222D;
+  --slate-fg: #F3EFE8;
+  --slate-muted: #9AA7B1;
+  --coral: #F0665A;
+  --coral-deep: #D9503F;
+  --rule-light: rgba(31,42,51,0.14);
+  --rule-dark: rgba(243,239,232,0.14);
+  --display: Georgia, "Times New Roman", serif;
+  --ui: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --gutter-l: max(20px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(20px, env(safe-area-inset-right, 0px));
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; height: auto; }
+body { background: var(--cream); color: var(--ink); font-family: var(--ui); -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.55; }
+img { max-width: 100%; }
+a { color: inherit; }
+.inner { max-width: 1040px; margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--coral-deep); margin: 0 0 14px; }
+h2 { font-family: var(--display); font-weight: 400; font-size: clamp(1.75rem, 3.4vw, 2.5rem); line-height: 1.15; margin: 0 0 18px; max-width: 24ch; text-wrap: balance; letter-spacing: -0.005em; }
+h3 { font-family: var(--display); font-weight: 400; font-size: 1.35rem; line-height: 1.25; margin: 0 0 10px; text-wrap: balance; }
+p { margin: 0; }
+.lede { font-size: clamp(1.02rem, 1.5vw, 1.15rem); color: var(--ink-soft); max-width: 60ch; }
+
+/* ---------- Hero ---------- */
+.stage {
+  position: relative; min-height: 100svh; display: grid; grid-template-rows: 1fr auto auto;
+  padding-left: var(--gutter-l); padding-right: var(--gutter-r);
+  padding-block: 0 calc(30px + env(safe-area-inset-bottom, 0px));
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 42%, rgba(240,102,90,0.15), transparent 70%),
+    radial-gradient(ellipse 90% 70% at 50% 45%, var(--slate-glow), var(--slate) 75%);
+  color: var(--slate-fg); overflow: hidden; color-scheme: dark;
+}
+.brand { position: absolute; top: calc(22px + env(safe-area-inset-top, 0px)); left: 0; right: 0; text-align: center; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--slate-muted); }
+.viewer { position: relative; width: 100%; min-height: 0; display: grid; place-items: center; }
+model-viewer {
+  width: min(92vw, 880px); height: min(60svh, 600px); max-width: 100%;
+  background: transparent; --poster-color: transparent; --progress-bar-color: transparent; --progress-bar-height: 0px;
+  opacity: 0; transform: scale(0.96); transition: opacity 1.2s ease, transform 1.4s cubic-bezier(.2,.7,.2,1); outline: none;
+}
+model-viewer.ready { opacity: 1; transform: none; }
+.loading { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; transition: opacity .6s ease; }
+.loading.done { opacity: 0; }
+.ring { width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--rule-dark); border-top-color: var(--coral); animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.hint { position: absolute; bottom: 6px; left: 0; right: 0; text-align: center; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate-muted); opacity: 0; transition: opacity 1s ease 1.2s; pointer-events: none; }
+model-viewer.ready ~ .hint { opacity: 0.8; }
+.copy { text-align: center; padding-block: 22px 0; display: grid; gap: 12px; justify-items: center; }
+.copy h1 { margin: 0; font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 4.6vw, 3.4rem); line-height: 1.1; letter-spacing: -0.005em; text-wrap: balance; max-width: 20ch; }
+.copy h1 em { font-style: italic; color: var(--coral); }
+.copy p { font-size: clamp(0.95rem, 1.4vw, 1.08rem); color: var(--slate-muted); max-width: 54ch; text-wrap: balance; }
+.enter { display: grid; justify-items: center; padding-block: 32px 0; }
+.enter a { display: inline-flex; align-items: center; gap: 12px; padding: 13px 26px; border-radius: 999px; border: 1px solid var(--coral); color: var(--slate-fg); text-decoration: none; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; background: rgba(240,102,90,0.08); transition: background .25s ease, transform .25s ease; }
+.enter a:hover, .enter a:focus-visible { background: rgba(240,102,90,0.22); transform: translateY(-1px); outline: none; }
+.enter a:focus-visible { box-shadow: 0 0 0 3px rgba(240,102,90,0.45); }
+.enter svg { width: 14px; height: 14px; animation: nudge 2.2s ease-in-out infinite; }
+@keyframes nudge { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+
+/* ---------- Intro ---------- */
+.intro { padding-block: 88px 64px; }
+.intro .inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+.intro .facts { display: grid; gap: 0; border-top: 1px solid var(--rule-light); }
+.intro .facts div { display: grid; grid-template-columns: 9ch 1fr; gap: 16px; padding-block: 14px; border-bottom: 1px solid var(--rule-light); font-size: 0.95rem; }
+.intro .facts b { font-weight: 600; color: var(--coral-deep); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; padding-top: 4px; }
+.intro .facts span { color: var(--ink-soft); min-width: 0; }
+
+/* ---------- Services ---------- */
+.services { padding-block: 24px 96px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--rule-light); border-left: 1px solid var(--rule-light); }
+.svc { padding: 36px 32px 40px; border-right: 1px solid var(--rule-light); border-bottom: 1px solid var(--rule-light); display: grid; grid-template-rows: auto auto 1fr; gap: 14px; min-width: 0; background: var(--cream); }
+.svc .tag { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); }
+.svc p { color: var(--ink-soft); font-size: 0.98rem; }
+.svc ul { margin: 6px 0 0; padding: 0; list-style: none; display: grid; gap: 9px; align-self: end; }
+.svc li { position: relative; padding-left: 20px; font-size: 0.95rem; }
+.svc li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 9px; height: 9px; border-radius: 50%; background: var(--coral); }
+
+/* ---------- REEF ---------- */
+.reef { background: var(--slate); color: var(--slate-fg); padding-block: 96px; color-scheme: dark; }
+.reef .eyebrow { color: var(--coral); }
+.reef .lede { color: var(--slate-muted); }
+.reef .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: end; margin-bottom: 48px; }
+.elements { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--rule-dark); }
+.el { padding: 28px 24px 32px 0; border-bottom: 1px solid var(--rule-dark); min-width: 0; }
+.el + .el { padding-left: 24px; border-left: 1px solid var(--rule-dark); }
+.el .letter { font-family: var(--display); font-size: 2.6rem; line-height: 1; color: var(--coral); margin-bottom: 14px; }
+.el h3 { font-size: 1.2rem; }
+.el p { color: var(--slate-muted); font-size: 0.93rem; }
+.reef .fine { margin-top: 28px; font-size: 0.8rem; color: var(--slate-muted); letter-spacing: 0.02em; }
+
+/* ---------- Who ---------- */
+.who { padding-block: 96px 80px; background: var(--cream-deep); }
+.who .inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 48px; }
+.who ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+.who li { padding-bottom: 14px; border-bottom: 1px solid var(--rule-light); font-size: 1rem; }
+.who li b { font-weight: 600; display: block; margin-bottom: 2px; }
+.who li span { color: var(--ink-soft); font-size: 0.95rem; }
+
+/* ---------- Contact ---------- */
+.contact { padding-block: 96px 110px; text-align: center; }
+.contact .inner { display: grid; gap: 22px; justify-items: center; }
+.contact h2 { max-width: 20ch; }
+.contact .lede { max-width: 48ch; }
+.cta { display: inline-flex; align-items: center; gap: 12px; padding: 15px 30px; border-radius: 999px; background: var(--coral); color: #fff; text-decoration: none; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; transition: background .25s ease, transform .25s ease; }
+.cta:hover, .cta:focus-visible { background: var(--coral-deep); transform: translateY(-1px); outline: none; }
+.cta:focus-visible { box-shadow: 0 0 0 3px rgba(240,102,90,0.45); }
+.email { font-family: var(--display); font-size: 1.15rem; color: var(--ink); user-select: all; }
+.contact small { color: var(--ink-soft); font-size: 0.85rem; }
+
+@media (max-width: 860px) {
+  .intro .inner, .reef .head, .who .inner { grid-template-columns: 1fr; gap: 28px; }
+  .grid { grid-template-columns: 1fr; }
+  .elements { grid-template-columns: 1fr 1fr; }
+  .el { padding: 24px 16px 28px 0; }
+  .el + .el { padding-left: 16px; }
+  .el:nth-child(3) { padding-left: 0; border-left: 0; }
+  .intro, .services, .reef, .who, .contact { padding-block: 64px; }
+}
+@media (max-width: 520px) {
+  .elements { grid-template-columns: 1fr; }
+  .el, .el + .el { padding-left: 0; border-left: 0; }
+  .svc { padding: 28px 20px 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  model-viewer { transition: opacity .3s ease; transform: none; }
+  .enter svg, .ring { animation: none; }
+}
+</style>
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<section class="stage" id="top">
+  <div class="brand">CoralCrest Consulting</div>
+  <div class="viewer">
+    <model-viewer id="mv"
+      data-src="coralcrest-logo.glb"
+      alt="CoralCrest nautilus mark in 3D. Drag to rotate."
+      camera-controls disable-zoom disable-pan auto-rotate
+      auto-rotate-delay="800" rotation-per-second="10deg" interaction-prompt="none"
+      orientation="0deg -58deg 0deg" camera-orbit="0deg 38deg 100%"
+      min-camera-orbit="auto 15deg auto" max-camera-orbit="auto 80deg auto"
+      field-of-view="24deg" environment-image="neutral" exposure="1.05" shadow-intensity="0"
+      touch-action="pan-y" loading="eager" reveal="manual">
+    </model-viewer>
+    <div class="loading" id="loading"><div class="ring"></div></div>
+    <div class="hint">Drag to turn</div>
+  </div>
+  <div class="copy">
+    <h1>Less advice, <em>more delivery.</em></h1>
+    <p>Treasury, finance transformation and regulatory reporting for specialty insurers and reinsurers. Built in Bermuda.</p>
+  </div>
+  <div class="enter">
+    <a href="#what-we-do" id="explore-btn">What we do
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l5 5 5-5"/></svg>
+    </a>
+  </div>
+</section>
+
+<section class="intro" id="what-we-do">
+  <div class="inner">
+    <div>
+      <p class="eyebrow">What we do</p>
+      <h2>Finance and treasury change that holds, for businesses whose critical path runs through banks, vendors and regulators.</h2>
+      <p class="lede">CoralCrest works inside the finance function of specialty insurers and reinsurers. Four service lines, one standard: the work is done when your team can run it without us.</p>
+    </div>
+    <div class="facts">
+      <div><b>Sector</b><span>International insurance and reinsurance, with a Bermuda regulatory focus</span></div>
+      <div><b>Scope</b><span>Treasury, finance, investment operations and regulatory reporting</span></div>
+      <div><b>Model</b><span>Hands-on delivery, fixed-scope or fractional, led by a former Head of Group Treasury</span></div>
+      <div><b>Method</b><span>REEF, built for projects whose timelines you influence but cannot command</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="inner">
+    <div class="grid">
+      <article class="svc">
+        <span class="tag">Service line 01</span>
+        <div>
+          <h3>Finance, treasury and investments transformation</h3>
+          <p>Operating model, process and systems change across the finance function, delivered in increments that compound rather than in a single go-live.</p>
+        </div>
+        <ul>
+          <li>Target operating model design and role mapping</li>
+          <li>Bank connectivity, SWIFT and ISO 20022 migration</li>
+          <li>Cash, liquidity and collateral process redesign</li>
+          <li>Investment accounting platforms (Workiva, Sage Intacct)</li>
+        </ul>
+      </article>
+      <article class="svc">
+        <span class="tag">Service line 02</span>
+        <div>
+          <h3>Regulatory reporting adoption</h3>
+          <p>BMA reporting built to be repeatable: the schedules, the data lineage behind them, and the controls that let a small team sign off with confidence.</p>
+        </div>
+        <ul>
+          <li>EBS and BSCR build-out and review</li>
+          <li>Statutory schedules: II, IIB, V(e), VI and VIA, XXI</li>
+          <li>Data mapping from source systems to filing</li>
+          <li>Reporting calendars, controls and evidence packs</li>
+        </ul>
+      </article>
+      <article class="svc">
+        <span class="tag">Service line 03</span>
+        <div>
+          <h3>Fractional BAU support</h3>
+          <p>Senior treasury and finance capacity when you need it: covering a gap, carrying a quarter-end, or holding the function steady through a transition.</p>
+        </div>
+        <ul>
+          <li>Interim Treasurer or Head of Treasury cover</li>
+          <li>Quarter-end and year-end close support</li>
+          <li>Bank, custodian and rating agency relationship management</li>
+          <li>Remote treasury operations capacity for recurring workload</li>
+        </ul>
+      </article>
+      <article class="svc">
+        <span class="tag">Service line 04</span>
+        <div>
+          <h3>TMS implementation advisory</h3>
+          <p>Independent, client-side guidance from selection through go-live, with FIS Integrity as a specialty. We sit on your side of the table, not the vendor's.</p>
+        </div>
+        <ul>
+          <li>Requirements, RFP and vendor selection</li>
+          <li>Design authority: static data, workflows, security model</li>
+          <li>Integration with banks, ERP and investment systems</li>
+          <li>UAT design, cutover planning and hypercare</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="reef" id="reef">
+  <div class="inner">
+    <div class="head">
+      <div>
+        <p class="eyebrow">How we work</p>
+        <h2>The REEF Method</h2>
+      </div>
+      <p class="lede">Generic delivery frameworks assume you control your critical path. Treasury and TMS projects don't: it runs through banks, SWIFT bureaus, custodians and regulators. REEF is built for that reality, and named for the reef-built limestone Bermuda stands on.</p>
+    </div>
+    <div class="elements">
+      <div class="el"><div class="letter">R</div><h3>Reliance</h3><p>Every external dependency is mapped before a date is committed. The plan is shaped around who you rely on, not the other way round.</p></div>
+      <div class="el"><div class="letter">E</div><h3>Evidence</h3><p>Progress is claimed only with proof: executed test cases, signed-off reconciliations, confirmed connectivity. No "90 percent done" without artefacts.</p></div>
+      <div class="el"><div class="letter">E</div><h3>Execution by accretion</h3><p>Small, permanent, compounding layers of working functionality. Each layer is load-bearing before the next is added.</p></div>
+      <div class="el"><div class="letter">F</div><h3>Foundation transfer</h3><p>The engagement ends with your team owning the structure. Documentation, runbooks and knowledge transfer are deliverables, not afterthoughts.</p></div>
+    </div>
+    <p class="fine">The REEF Method is proprietary to CoralCrest Consulting Limited.</p>
+  </div>
+</section>
+
+<section class="who">
+  <div class="inner">
+    <div>
+      <p class="eyebrow">Who it's for</p>
+      <h2>Finance leaders who need the work done, not described.</h2>
+      <p class="lede">CoralCrest is led by Lauren Greenidge, CPA, formerly Head of Group Treasury at Convex and Group Treasurer at Fidelis, with earlier years at Zurich Insurance and KPMG. The firm is small by design and takes on a limited number of engagements at a time.</p>
+    </div>
+    <ul>
+      <li><b>Specialty insurers and reinsurers</b><span>Bermuda-registered carriers and the Bermuda platforms of international groups.</span></li>
+      <li><b>CFOs and Treasurers mid-change</b><span>A new TMS, a new bank panel, a new reporting regime, or all three at once.</span></li>
+      <li><b>Lean finance teams</b><span>Where the people who know the process are also the people who have to run it every day.</span></li>
+      <li><b>Technology and data partners</b><span>Vendors building regulatory or treasury products who need practitioner input from the client side.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="inner">
+    <p class="eyebrow">Start a conversation</p>
+    <h2>Tell us what isn't moving.</h2>
+    <p class="lede">A short call is usually enough to say whether CoralCrest is the right fit and what the first layer of work would be.</p>
+    <a class="cta" href="mailto:lauren@coralcrestconsulting.com?subject=CoralCrest%20enquiry">Email Lauren</a>
+    <div class="email">lauren@coralcrestconsulting.com</div>
+    <small>CoralCrest Consulting Limited, Pembroke, Bermuda</small>
+  </div>
+</section>
+
+<script>
+(function () {
+  var mv = document.getElementById('mv');
+  var loading = document.getElementById('loading');
+  if (window.customElements) {
+    customElements.whenDefined('model-viewer').then(function () {
+      mv.src = window.CORALCREST_GLB || mv.getAttribute('data-src');
+      mv.dismissPoster();
+    });
+  }
+  mv.addEventListener('load', function () { mv.classList.add('ready'); loading.classList.add('done'); });
+  mv.addEventListener('error', function () { loading.innerHTML = '<div style="color:var(--slate-muted);font-size:13px">The 3D mark could not load.</div>'; });
+})();
+</script>
+</body>
+</html>
