@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CoralCrest Hero</title>
+<style>
+/* Layout: one dark full-height stage; the 3D mark is the only bright object, text sits quietly below it, Explore pinned to the bottom edge. Single committed dark look (site hero is navy by brand). */
+:root {
+  --bg: #0B141C;
+  --bg-glow: #15222D;
+  --fg: #F3EFE8;
+  --fg-muted: #9AA7B1;
+  --coral: #C9553E;
+  --coral-soft: #E07A62;
+  --rule: rgba(243,239,232,0.14);
+  --display: Georgia, "Times New Roman", serif;
+  --ui: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--ui);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.stage {
+  position: relative;
+  min-height: 100svh;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 calc(28px + env(safe-area-inset-bottom, 0px));
+  box-sizing: border-box;
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 42%, rgba(201,85,62,0.16), transparent 70%),
+    radial-gradient(ellipse 90% 70% at 50% 45%, var(--bg-glow), var(--bg) 75%);
+  overflow: hidden;
+}
+.brand {
+  position: absolute;
+  top: calc(22px + env(safe-area-inset-top, 0px));
+  left: 0; right: 0;
+  text-align: center;
+  font-family: var(--ui);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.viewer {
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+}
+model-viewer {
+  width: min(92vw, 880px);
+  height: min(62svh, 620px);
+  max-width: 100%;
+  background: transparent;
+  --poster-color: transparent;
+  --progress-bar-color: transparent;
+  --progress-bar-height: 0px;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 1.2s ease, transform 1.4s cubic-bezier(.2,.7,.2,1);
+  outline: none;
+}
+model-viewer.ready { opacity: 1; transform: none; }
+.loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  transition: opacity .6s ease;
+}
+.loading.done { opacity: 0; }
+.ring {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--rule);
+  border-top-color: var(--coral);
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.hint {
+  position: absolute;
+  bottom: 6px;
+  left: 0; right: 0;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  opacity: 0;
+  transition: opacity 1s ease 1.2s;
+  pointer-events: none;
+}
+model-viewer.ready ~ .hint { opacity: 0.8; }
+.copy {
+  text-align: center;
+  padding-block: 22px 0;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+.copy h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 4.2vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+  max-width: 22ch;
+}
+.copy h1 em {
+  font-style: italic;
+  color: var(--coral-soft);
+}
+.copy p {
+  margin: 0;
+  font-size: clamp(0.92rem, 1.4vw, 1.05rem);
+  line-height: 1.5;
+  color: var(--fg-muted);
+  max-width: 52ch;
+  text-wrap: balance;
+}
+.enter {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding-block: 34px 0;
+}
+.enter a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  border: 1px solid var(--coral);
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: rgba(201,85,62,0.08);
+  transition: background .25s ease, transform .25s ease;
+}
+.enter a:hover, .enter a:focus-visible { background: rgba(201,85,62,0.22); transform: translateY(-1px); outline: none; }
+.enter a:focus-visible { box-shadow: 0 0 0 3px rgba(224,122,98,0.45); }
+.enter svg { width: 14px; height: 14px; animation: nudge 2.2s ease-in-out infinite; }
+@keyframes nudge { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+
+
+@media (prefers-reduced-motion: reduce) {
+  model-viewer { transition: opacity .3s ease; transform: none; }
+  .enter svg, .ring { animation: none; }
+}
+</style>
+
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+
+</head>
+<body>
+<section class="stage" id="top">
+  <div class="brand">CoralCrest Consulting</div>
+
+  <div class="viewer">
+    <model-viewer id="mv"
+      data-src="coralcrest-logo.glb"
+      alt="CoralCrest nautilus mark in 3D. Drag to rotate."
+      camera-controls
+      disable-zoom
+      disable-pan
+      auto-rotate
+      auto-rotate-delay="800"
+      rotation-per-second="10deg"
+      interaction-prompt="none"
+      orientation="0deg -58deg 0deg"
+      camera-orbit="0deg 38deg 100%"
+      min-camera-orbit="auto 15deg auto"
+      max-camera-orbit="auto 80deg auto"
+      field-of-view="24deg"
+      environment-image="neutral"
+      exposure="1.05"
+      shadow-intensity="0"
+      touch-action="pan-y"
+      loading="eager"
+      reveal="manual">
+    </model-viewer>
+    <div class="loading" id="loading"><div class="ring"></div></div>
+    <div class="hint">Drag to turn</div>
+  </div>
+
+  <div class="copy">
+    <h1>Connecting the points <em>others can't see.</em></h1>
+    <p>Treasury, finance transformation and regulatory reporting for global specialty insurers and reinsurers. Built in Bermuda.</p>
+  </div>
+
+  <div class="enter">
+    <a href="#explore" id="explore-btn">Explore
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l5 5 5-5"/></svg>
+    </a>
+  </div>
+</section>
+
+
+<script>
+(function () {
+  var mv = document.getElementById('mv');
+  var loading = document.getElementById('loading');
+  if (window.customElements) {
+    customElements.whenDefined('model-viewer').then(function () {
+      mv.src = mv.getAttribute('data-src');
+      mv.dismissPoster();
+    });
+  }
+  mv.addEventListener('load', function () {
+    mv.classList.add('ready');
+    loading.classList.add('done');
+  });
+  mv.addEventListener('error', function () {
+    loading.innerHTML = '<div style="color:var(--fg-muted);font-size:13px">The 3D mark could not load.</div>';
+  });
+  // Explore: set ?next=<url> on the embed to send the visitor on (e.g. a Wix anchor on the same page).
+  var btn = document.getElementById('explore-btn');
+  var next = new URLSearchParams(location.search).get('next');
+  if (next && /^https:\/\//.test(next)) {
+    btn.href = next;
+    btn.target = '_top';
+  } else {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      try { window.parent.postMessage({ type: 'coralcrest-explore' }, '*'); } catch (err) {}
+    });
+  }
+})();
+</script>
+</body>
+</html>
