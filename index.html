@@ -7,7 +7,7 @@
 <style>
 /* Layout: one dark full-height stage; the 3D mark is the only bright object, text sits quietly below it, Explore pinned to the bottom edge. Single committed dark look (site hero is navy by brand). */
 :root {
-  --bg: #0B141C;
+  --bg: #0F1B28;
   --bg-glow: #15222D;
   --fg: #F3EFE8;
   --fg-muted: #9AA7B1;
@@ -37,9 +37,7 @@ body {
   padding-right: max(16px, env(safe-area-inset-right, 0px));
   padding-block: 0 calc(28px + env(safe-area-inset-bottom, 0px));
   box-sizing: border-box;
-  background:
-    radial-gradient(ellipse 60% 45% at 50% 42%, rgba(240,102,90,0.16), transparent 70%),
-    radial-gradient(ellipse 90% 70% at 50% 45%, var(--bg-glow), var(--bg) 75%);
+  background: var(--bg);
   overflow: hidden;
 }
 .brand {
